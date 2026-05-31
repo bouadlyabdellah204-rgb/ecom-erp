@@ -566,8 +566,8 @@ def generate_expenses_pdf(df):
 
 def generate_sales_pdf(df):
     buf = io.BytesIO()
-    doc = SimpleDocTemplate(buf, pagesize=A4, leftMargin=1.5*cm, rightMargin=1.5*cm,
-                             topMargin=2*cm, bottomMargin=2*cm, pagesize=(A4[1], A4[0]))
+    doc = SimpleDocTemplate(buf, pagesize=(A4[1], A4[0]), leftMargin=1.5*cm, rightMargin=1.5*cm,
+                             topMargin=2*cm, bottomMargin=2*cm)
     elements = []
     build_pdf_header(elements, "Sales & Orders Report", "Rapport des ventes et commandes")
     if df.empty:
